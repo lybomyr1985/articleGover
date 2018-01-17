@@ -50,13 +50,16 @@
     "react-dom": "^0.14.9",
     "react-froala-wysiwyg": "^2.7.3",
     "react-redux": "^4.0.6",
-    "react-router": "^4.2.0",
+    "react-redux-router": "0.0.14",
+    "react-router": "^3.2.0",
     "react-router-dom": "^4.2.2",
-    "react-router-redux": "^4.0.8",
+    "react-router-redux": "^5.0.0-alpha.9",
     "react-router-transitions": "^2.3.3",
     "reactstrap": "^5.0.0-alpha.4",
     "redux": "^3.0.6",
     "redux-logger": "^3.0.6",
+    "redux-promise": "^0.5.3",
+    "redux-react-router": "^1.0.0-beta3",
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0"
   }

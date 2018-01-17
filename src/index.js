@@ -3,19 +3,24 @@ import React from 'react'
 import { render } from 'react-dom'
 import App from './containers/App'
 import Artricle from './containers/storeApp/articticle/acticle'
-import {createStore,   applyMiddleware } from 'redux'
+import {createStore,   applyMiddleware, combineReducers,compose } from 'redux'
 import {Provider} from 'react-redux'
 import red from './containers/reducers/redIn'
+
+import  ArticleDetail from './containers/storeApp/detail/artdetail'
 import Appst from './containers/storeApp/appSt'
-import { Router,  IndexRoute } from 'react-router'
-import axios from 'axios'
-import { BrowserRouter, Route, Switch,browserHistory  } from 'react-router-dom'
-import { routerReducer } from 'react-router-redux'  
+ 
+ 
+import createHistory from 'history/createBrowserHistory' 
+ 
+import { Router, Route,browserHistory  } from 'react-router'
+import { routerReducer,syncHistoryWithStore, routerMiddleware,ConnectedRouter  } from 'react-router-redux'  
  
 import {apiMiddleware} from './store/customMidleware'
- 
- 
-/*const history = syncHistoryWithStore(hashHistory, store); 
+import promise from 'redux-promise'; 
+
+
+/*
 
 
 const client = axios.create({ //all axios can be used, shown in axios documentation
@@ -36,18 +41,28 @@ const store=createStore( red,
 console.log(store.getState());
  
 store.subscribe(()=> console.log('state'+store.getState()));
-  */ 
-  const createStoreWithMiddleware = applyMiddleware(apiMiddleware)(createStore);
-  
-  // create the store
-  const store = createStoreWithMiddleware(red ) ;
 
+ // */ 
+const hist = createHistory();
+const middleware = (routerMiddleware(hist));
+
+
+ const createStoreWithMiddleware =   applyMiddleware(apiMiddleware,middleware )(createStore);
+const reduser=combineReducers({red, routing:routerReducer});
+  // create the store 
+  
+  
+
+
+const store = createStoreWithMiddleware(red);
+ // const history = syncHistoryWithStore(browserHistory, store);  
+ console.log(store.getState());
+ 
 render(
 <Provider store={store}>
-       <BrowserRouter history={browserHistory}>
-               <App/>
-               
-       </BrowserRouter>    
+        <ConnectedRouter   history={hist }>   
+          <App/>
+        </ConnectedRouter>
 </Provider>,
   document.getElementById('root')
 );

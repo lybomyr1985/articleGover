@@ -6,7 +6,7 @@ import {fetchArt} from '../actions/action'
 import * as actions from '../actions/action'
 import { bindActionCreators } from 'redux' 
 import Article from './articticle/acticle'  
-
+import {Link} from 'react-router-dom'
 class  Appst extends Component{
 
     componentWillMount(){
@@ -23,10 +23,9 @@ class  Appst extends Component{
                       body={article.body}
                       published={article.published}
                       visits={article.visits}
-                      id={article._id}
-                     
-             >   </Article>
-           
+                 
+            >  </Article>
+            <Link to={`artic/${article._id}`}>dddddddddddddddddddd</Link>
             </div>
             )
          
@@ -35,6 +34,7 @@ class  Appst extends Component{
      return(
             <div>     
               {art}
+       
             </div>
 
      )  

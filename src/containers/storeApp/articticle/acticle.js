@@ -17,7 +17,7 @@ render (){
             <div className="art_body">{body}</div>
             <h3 className="art_published">{published }</h3>
             <span className="art_visits">{visits}</span>
-              <div> <Link to ={`/artic/${ id}`}> Детальніше</Link></div>
+            
        </div>
 
     )
@@ -35,9 +35,8 @@ render (){
             <span className="art_visits">{visits}</span>
             <span  >{id}</span>
             
-          <Link to ={`/artic/${ id}`}>  <Button  bsStyle="primary">Детальніше</Button></Link>
-       
             
+        
        </div>
 
     )
