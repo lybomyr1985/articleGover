@@ -11,8 +11,7 @@ export default function redIn(state={
       }
       case 'FETCH__REJECTED':{
         return {
-                 ...state,
-                 
+                 ...state,                 
                  error: action.payload
                }
       }

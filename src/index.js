@@ -3,7 +3,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import App from './containers/App'
 import Artricle from './containers/storeApp/articticle/acticle'
-import {createStore,   applyMiddleware, combineReducers,compose } from 'redux'
+import {createStore,   applyMiddleware, combineReducers  } from 'redux'
 import {Provider} from 'react-redux'
 import red from './containers/reducers/redIn'
 
@@ -17,7 +17,8 @@ import { Router, Route,browserHistory  } from 'react-router'
 import { routerReducer,syncHistoryWithStore, routerMiddleware,ConnectedRouter  } from 'react-router-redux'  
  
 import {apiMiddleware} from './store/customMidleware'
-import promise from 'redux-promise'; 
+import { reducer as formReducer } from 'redux-form'
+
 
 
 /*
@@ -47,8 +48,8 @@ const hist = createHistory();
 const middleware = (routerMiddleware(hist));
 
 
- const createStoreWithMiddleware =   applyMiddleware(apiMiddleware,middleware )(createStore);
-const reduser=combineReducers({red, routing:routerReducer});
+const createStoreWithMiddleware =   applyMiddleware(apiMiddleware,middleware)(createStore);
+const reduser=combineReducers({red,form: formReducer});
   // create the store 
   
   

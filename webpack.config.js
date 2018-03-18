@@ -18,13 +18,21 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.ProvidePlugin({
-      jQuery:	'jquery'
+      'window.Quill': 'quill'
+         
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
       })
   ],
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot-loader','babel-loader'] },
- 
+
+      
+      { test: /\.js$/, exclude: /node_modules(?!\/quill-image-drop-module|quill-image-resize-module)/, loaders: ['react-hot-loader','babel-loader'] },
+      
+          { test: /\.(eot|svg|ttf|woff|woff2)$/, loader: 'file-loader?name=public/fonts/[name].[ext]' },
        { test: /\.json$/, loader: 'json-loader' },
        { test: /\.html/, loader: 'html-loader' },
        { test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader' },
