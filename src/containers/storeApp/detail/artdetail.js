@@ -2,11 +2,13 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import {Link} from 'react-router-dom'
- 
+import Article from '../articticle/acticle'  
  
 const ArticleDetail= ({article})=> (<div>
 
     <h1> {article.title }</h1>
+      <Article 
+      img={article.img}/>
      <div>{article.body})</div>
      <span>{article._id}</span>
      <Link to={'/'}>Back</Link>

@@ -9,34 +9,39 @@ import Article from './articticle/acticle'
 import {Link} from 'react-router-dom'
 //import Button from 'react-bootstrap/lib/Button'
 import {Button} from 'reactstrap'
- 
-
-
-
+import './artic_base.css'; 
+import  'react-fa-icon'
+import imE from  '../../image/edit-icon.png'
+import imD from  '../../image/delete-icon.png'
+import 'font-awesome/css/font-awesome.min.css';
 class  Appst extends Component{
 
     componentWillMount(){
        this.props.actions.fetchData();
    }
-   
+
+  
+  
+
+
   render(){
         const {articles}=this.props;
     
        const art= articles.map(function (article,key){
        console.log(article.img);
          return (  
-             <div key={key}>
+             <div key={key} className="article_base">
              <Article title={article.title} 
                       img={article.img}
-                      body={article.body}
-                      published={article.published}
-                      visits={article.visits}
+                   
+                    
                  
-            >  </Article>
-          
-            <Link to={`artic/${article._id}`}> <Button color="primary">Детальніше...</Button></Link>
-            <Link to={`articEdite/${article._id}`}> <Button color="warning">Редагувати</Button></Link>  
-            <Link to={`articDelete/${article._id}`}> <Button color="danger">Видалити</Button></Link>  
+            >  </Article>     
+            <div className="buttonBlok">     
+                <Link to={`artic/${article._id}`}> <Button color="primary">Детальніше...</Button></Link>
+                <Link to={`articEdite/${article._id}`}> <Button color="warning"><img src={imE} className={"iE"} alt="mii"/></Button></Link>  
+                <Link to={`articDelite/${article._id}`}>  <Button color="danger"  ><img src={imD} className={"iD"} alt="mi"/></Button> </Link> 
+            </div>
             </div>
             )
          
@@ -44,9 +49,11 @@ class  Appst extends Component{
  
      return(
             <div>  
+            <div className="dodButton">
         <Link to={'/addNewArt'}> <Button color="warning">Додати нове повідомлення</Button></Link>  
-        
+        </div>
               {art}  
+               
                      
             </div>
 

@@ -1,9 +1,10 @@
 import    {Component} from 'react'
 import React from 'react'
 import Base64 from 'base-64' 
+import { Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button } from 'reactstrap'; 
  
- 
- 
+ import './article.css'
 
 
 export default class Article extends Component{
@@ -23,22 +24,33 @@ render (){
    
       /**/
       var str='data:image/jpeg;base64,';
+
   var res=  str.concat(image ).toString(); 
   
   console.log('Image'+res.toString())
     return(
-        <div className="article">
-        <span  >{id}</span>
-            <h3 className="art_title">{title }</h3>
-             <div>{imgType}</div>
-             <img  src={res}/>
+         <div className="article">
+                 
+           <img  src={res}/>
+             <h3 className="art_title">{title }</h3>
+             
              
             <div className="art_body">{body}</div>
-            <h3 className="art_published">{published }</h3>
-            <span className="art_visits">{visits}</span>
-            
-       </div>
-
+            <div className="art_published">{published }</div>
+           
+           
+       </div> 
+    /*   <div>
+       <Card>
+         <CardImg top width="100%" src={res} alt="Card image cap" />
+         <CardBody>
+           <CardTitle>{title}</CardTitle>
+           <CardSubtitle>{body}</CardSubtitle>
+           
+           
+         </CardBody>
+       </Card>
+     </div>*/
     )
 }
 

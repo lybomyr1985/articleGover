@@ -1,0 +1,18 @@
+.article_base{
+    border: 0.05em solid #e0e0e0; 
+    width: 318px;
+    margin: 2%;
+    float: left;
+
+}
+
+.iE,.iD{
+    width: 25px;
+   height:  25px;
+}
+
+.buttonBlok{
+    position: relative;
+    left: 13.5%;
+    margin-bottom: 21px
+}

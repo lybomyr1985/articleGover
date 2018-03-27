@@ -1,0 +1,25 @@
+.article{
+    width: 318px;
+    height:  400px;
+  
+}
+.article_base:hover{
+    border: 0.1em solid red ;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+}
+.article img{
+    align-items: center;
+    width: 318px;
+    height: 320px;
+}
+.article .art_title {
+    text-align: center;
+}
+
+.article .art_body span {
+    overflow: hidden;
+    width: 218px;
+    text-align: center;
+}

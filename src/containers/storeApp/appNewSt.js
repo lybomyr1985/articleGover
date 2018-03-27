@@ -44,7 +44,7 @@ var img = new Buffer(iimg, 'base64');
   var x=JSON.stringify(this.state);
  console.log('state ADD'+x);
 fetchAdd(x);
- browserHistory.push('/');
+this.props.history.push('/');
   //  console.log(e[0].id); 
 //console.log(e); 
 

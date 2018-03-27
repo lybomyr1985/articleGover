@@ -42,7 +42,7 @@ var img = new Buffer(iimg, 'base64');
   var xF=JSON.stringify(this.state);
  console.log('state ADD'+xF);
 fetchEdite(id,xF);
- browserHistory.push('/');
+this.props.history.push('/');
   } 
   
     

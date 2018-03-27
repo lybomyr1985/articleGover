@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 
-export const fetchEdite= (_id,item) => { 
+export const fetchEdite= (id,item) => { 
  
-    axios.put(`/api/articles/:${_id}`,item,
+    axios.put('/api/articles/'+id,item,
     {
       headers: {
           'Content-Type': 'application/json'
@@ -11,10 +11,11 @@ export const fetchEdite= (_id,item) => {
     }
   )
       .then(function (response) {
-        console.log('Idddddddddddddd'+_id);
+        console.log('Idddddddddddddd'+id);
         console.log('Succes response'+response);
    
       })
       .catch(function (error) {
+        console.log('Idddddddddddddd'+id);
         console.log(error);
       });  }
