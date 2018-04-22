@@ -1,2 +1,6 @@
-# redux-ru-tutorial
-Код для раздела [Подготовка/ESLint](https://maxfarseer.gitbooks.io/redux-course-ru/content/eslint.html)
+## Installation
+
+
+```bash
+$ npm install --save react react-dom react-md
+```

@@ -1,3 +1,12 @@
+.art_section{
+    margin: 0;
+
+}
+.art_sec_Art{
+    margin: 0;
+    margin-left: 10%;
+}
+
 .article_base{
     border: 0.05em solid #e0e0e0; 
     width: 318px;
@@ -15,4 +24,31 @@
     position: relative;
     left: 13.5%;
     margin-bottom: 21px
+} 
+.art_pagin{
+    clear: both;
+}
+
+.nav{
+ margin: 30px 0 20px 0;    
+}
+
+.users-pagination{
+    margin-top: 0;
+}
+
+ .art_pagin .pull-right    {
+    float: left;
+    font-size: 1.5em;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.art_pagin .pull-right li a{
+    padding: .5rem .75rem;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+.art_pagin .pull-right li.active  a  {
+ 
+    background-color: #014c8c;
+    color: #fff;
 }

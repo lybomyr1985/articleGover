@@ -71,11 +71,16 @@ this.props.history.push('/');
         
           <FormGroup>
             <Button>Submit</Button>
+                     <Link to={'/'}><Button className="back_button" color="primary">Back </Button></Link>
           </FormGroup>
+ 
         </AvForm>
       
+      
         {this.state.values && <div>
+
           <h5>Submission values</h5>
+        
           Values: <pre>{JSON.stringify(this.state.value, null, 2)}</pre>
         </div>}
       </div>

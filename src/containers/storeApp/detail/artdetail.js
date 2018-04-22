@@ -3,15 +3,16 @@ import {connect} from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import Article from '../articticle/acticle'  
- 
-const ArticleDetail= ({article})=> (<div>
+import {Button} from 'reactstrap'
 
+const ArticleDetail= ({article})=> (<div>
+    <Link to={'/'}><Button className="back_button" color="primary">Back </Button></Link>
     <h1> {article.title }</h1>
       <Article 
       img={article.img}/>
      <div>{article.body})</div>
      <span>{article._id}</span>
-     <Link to={'/'}>Back</Link>
+   
 </div>)
 /*
 class ArticleDetail extends React.Component{

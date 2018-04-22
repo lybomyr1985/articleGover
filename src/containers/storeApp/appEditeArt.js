@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom'
 import {fetchEdite} from  '../actions/action_ediite'
 import { browserHistory  } from 'react-router' 
 
+
 class EditeArticle extends Component{
   constructor(props) {
     super(props);
@@ -107,7 +108,8 @@ console.log(ody[opp]);
           
           <FormGroup>
             <Button>Submit</Button>
-          </FormGroup>
+          </FormGroup> 
+          <Link to={'/'}><Button className="back_button" color="primary">Back </Button></Link>
         </AvForm>
       
      
